@@ -4,6 +4,7 @@ import useSWR from 'swr';
 import Header from '../components/Header';
 export default function Home() {
   const { data: snippets, mutate } = useSWR('/api/snippets');
+
   return (
     <div>
       <Head>

@@ -2,7 +2,7 @@
 
 Share code snippets that you use frequently in development. Built with Auth0, Tailwind CSS, SWR, React Hook Form, and FaunaDB!
 
-![Application Demo](./images/cover.jpg)
+![Application Demo](./images/cover.png)
 
 ## Getting Started
 
