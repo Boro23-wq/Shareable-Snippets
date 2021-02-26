@@ -1,28 +1,16 @@
-Source code for the [Next.js](https://nextjs.org/) crash course project that uses Auth0, Tailwind CSS, SWR, React Hook Form, and FaunaDB!
+## Shareable Snippets
 
-![Working Demo](./images/cover.jpg)
+Share code snippets that you use frequently in development. Built with Auth0, Tailwind CSS, SWR, React Hook Form, and FaunaDB!
 
-## Follow the Tutorial
+![Application Demo](./images/cover.jpg)
 
-Want to follow along yourself?
-
-### Part 1
-In part one, we setup a database in Fauna and create a new Nextjs application from scratch. We add CRUD functionality for working with code snippets while using some cool technologies like Tailwind CSS, react-hook-form,  and SWR.
-
-> [Watch the tutorial](https://www.youtube.com/watch?v=1GpbdX8aJCU)
-
-### Part 2 - coming soon!
-
-In part 2, we will add authentication to the snippets app using Auth0. We'll learn how to create protected pages and routes in Next.js, how to associate snippets with users, and add authorization to make sure only appropriate users can update and delete snippets.
-
-> Video tutorial coming soon!
 ## Getting Started
 
 1. [Sign up for a free account at FaunaDB](http://bit.ly/jqqfauna).
 
 2. Create a collection in Fauna called `snippets` and a token (more info on tokens)[https://docs.fauna.com/fauna/current/security/tokens.html].
 
-3. [Sign up for a free account at Auth0](http://bit.ly/jqqauth0).
+3. [Sign up for a free account at Auth0.](http://bit.ly/jqqauth0).
 
 4. Create an application in Auth0 and make note of your domain, client Id, and client secret. Chekout the dos for [more details on setup + configuration](https://github.com/auth0/nextjs-auth0).
 
