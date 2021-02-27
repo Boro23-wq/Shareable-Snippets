@@ -3,9 +3,12 @@ import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useUser } from '@auth0/nextjs-auth0';
+import { useToast } from '@chakra-ui/react';
 
 export default function SnippetForm({ snippet }) {
   const router = useRouter();
+  const toast = useToast();
+
   const { register, handleSubmit, errors } = useForm({
     defaultValues: {
       code: snippet ? snippet.data.code : '',
@@ -26,6 +29,13 @@ export default function SnippetForm({ snippet }) {
         },
       });
       router.push('/');
+      toast({
+        title: 'Success!',
+        description: "We've created your snippet.",
+        status: 'success',
+        duration: 5000,
+        isClosable: true,
+      });
     } catch (err) {
       console.error(err);
     }
@@ -39,6 +49,14 @@ export default function SnippetForm({ snippet }) {
         headers: {
           'Content-Type': 'application/json',
         },
+      });
+      router.push('/');
+      toast({
+        title: 'Success!',
+        description: "We've deleted your snippet.",
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
       });
     } catch (err) {
       console.error(err);
@@ -80,7 +98,9 @@ export default function SnippetForm({ snippet }) {
           ref={register({ required: true })}
         />
         {errors.name && (
-          <p className='font-bold text-red-900'>Name is required!</p>
+          <p className='mt-1 font-semibold text-red-900'>
+            Name field is required!
+          </p>
         )}
       </div>
 
@@ -98,12 +118,17 @@ export default function SnippetForm({ snippet }) {
           className='w-full border bg-white rounded px-3 py-2 outline-none text-gray-700'
           ref={register({ required: true })}
         >
-          <option className='py-1'>javascript</option>
-          <option className='py-1'>html</option>
-          <option className='py-1'>css</option>
+          <option className='py-1' selected>
+            Javascript
+          </option>
+          <option className='py-1'>HTML</option>
+          <option className='py-1'>CSS</option>
+          <option className='py-1'>React</option>
         </select>
         {errors.language && (
-          <p className='font-bold text-red-900'>Language is required!</p>
+          <p className='mt-1 font-semibold text-red-900'>
+            Language field is required!
+          </p>
         )}
       </div>
 
@@ -124,7 +149,9 @@ export default function SnippetForm({ snippet }) {
           ref={register({ required: true })}
         ></textarea>
         {errors.description && (
-          <p className='font-bold text-red-900'>Description is required.</p>
+          <p className='mt-1 font-semibold text-red-900'>
+            Description field is required!
+          </p>
         )}
       </div>
 
@@ -134,7 +161,7 @@ export default function SnippetForm({ snippet }) {
           className='block text-red-100 text-sm font-bold mb-1'
           htmlFor='code'
         >
-          Code
+          Code Snippet
         </label>
         <textarea
           name='code'
@@ -145,26 +172,28 @@ export default function SnippetForm({ snippet }) {
           ref={register({ required: true })}
         ></textarea>
         {errors.code && (
-          <p className='font-bold text-red-900'>Code is required!</p>
+          <p className='mt-1 font-semibold text-red-900'>
+            Code field is required!
+          </p>
         )}
       </div>
 
       <button
-        className='bg-red-800 hover:bg-red-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2'
+        className='transition duration-500 bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2'
         type='submit'
       >
         Save
       </button>
 
       <Link href='/'>
-        <a className='mt-3 inline-block bg-red-800 hover:bg-red-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2'>
+        <a className='transition duration-500 mt-3 inline-block bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2'>
           Cancel
         </a>
       </Link>
 
       {snippet && (
         <button
-          className='bg-red-800 hover:bg-red-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2'
+          className='transition duration-500 bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2'
           type='button'
           onClick={deleteSnippet}
         >

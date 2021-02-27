@@ -14,13 +14,17 @@ export default function Home() {
 
       <main className=''>
         <Header
-          title='Errday Code Snippets'
-          subtitle='Start sharing snippets today!'
+          title='Code Snippets'
+          subtitle='Shareable Snippets allows developers to share code snippets easily. Get instant access to thousands of development snippets used daily.'
         />
-        {snippets &&
+        {snippets ? (
+          snippets.length > 0 &&
           snippets.map((snippet) => (
             <Snippet key={snippet.id} snippet={snippet} />
-          ))}
+          ))
+        ) : (
+          <div>Loading Snippets...</div>
+        )}
       </main>
     </div>
   );
