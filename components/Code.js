@@ -17,7 +17,7 @@ export default function Code({ code }) {
         type='submit'
         onClick={() => setShowCode(!showCode)}
       >
-        {showCode ? 'Hide Code' : 'Click for Code 👇'}
+        {showCode ? 'Hide Code' : 'Expand Code 👇'}
       </button>
       {showCode && (
         <div className='relative'>

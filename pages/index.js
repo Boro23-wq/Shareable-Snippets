@@ -15,7 +15,7 @@ export default function Home() {
       <main className=''>
         <Header
           title='Code Snippets'
-          subtitle='Shareable Snippets allows developers to share code snippets easily. Get instant access to thousands of development snippets used daily.'
+          subtitle='Shareable Snippets allow developers to share code snippets easily. Get instant access to thousands of development snippets used daily.'
         />
         {snippets ? (
           snippets.length > 0 &&
