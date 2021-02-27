@@ -18,12 +18,12 @@ export default function Snippet({ snippet }) {
           'Content-Type': 'application/json',
         },
       });
-      mutate('/api/deleteSnippet');
+      mutate('/api/snippets', async (data) => {}, true);
       toast({
-        title: 'Success!',
+        title: 'Deleted!',
         description: "We've deleted your snippet.",
         status: 'error',
-        duration: 5000,
+        duration: 2000,
         isClosable: true,
       });
     } catch (err) {
@@ -31,11 +31,11 @@ export default function Snippet({ snippet }) {
     }
   };
 
-  return (
+  return snippet ? (
     <div className='bg-gray-100 p-4 rounded-md my-2 shadow-lg'>
       <div className='flex items-center justify-between mb-2'>
         <h2 className='text-xl text-gray-800 font-bold'>{snippet.data.name}</h2>
-        <span className='border-4 border-gray-500 border-opacity-25 font-bold text-xs text-gray-600 px-2 py-1 rounded-lg '>
+        <span className='border-2 bg-gray-300 border-opacity-25 font-semibold text-xs text-gray-800 px-2 py-1 rounded-lg '>
           {snippet.data.language}
         </span>
       </div>
@@ -50,15 +50,17 @@ export default function Snippet({ snippet }) {
           </Link>
           {snippet && (
             <button
-              className='transition duration-500 bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2'
+              className='text-xs mr-2 mt-2 px-2 py-1 border-2 border-red-500 text-gray-800 rounded-md hover:border-red-800 transition duration-200 ease-in-out'
               type='button'
               onClick={deleteSnippet}
             >
-              Delete
+              Delete Snippet
             </button>
           )}
         </>
       )}
     </div>
+  ) : (
+    <div>Loading Snippet...</div>
   );
 }

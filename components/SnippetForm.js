@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { useUser } from '@auth0/nextjs-auth0';
+// import { useUser } from '@auth0/nextjs-auth0';
 import { useToast } from '@chakra-ui/react';
 
 export default function SnippetForm({ snippet }) {
@@ -33,7 +33,7 @@ export default function SnippetForm({ snippet }) {
         title: 'Success!',
         description: "We've created your snippet.",
         status: 'success',
-        duration: 5000,
+        duration: 2000,
         isClosable: true,
       });
     } catch (err) {
@@ -52,10 +52,10 @@ export default function SnippetForm({ snippet }) {
       });
       router.push('/');
       toast({
-        title: 'Success!',
+        title: 'Deleted!',
         description: "We've deleted your snippet.",
         status: 'error',
-        duration: 5000,
+        duration: 2000,
         isClosable: true,
       });
     } catch (err) {
@@ -66,6 +66,7 @@ export default function SnippetForm({ snippet }) {
   const updateSnippet = async (data) => {
     const { code, language, description, name } = data;
     const id = snippet.id;
+
     try {
       await fetch('/api/updateSnippet', {
         method: 'PUT',
@@ -75,6 +76,13 @@ export default function SnippetForm({ snippet }) {
         },
       });
       router.push('/');
+      toast({
+        title: 'Saved!',
+        description: "We've saved your snippet.",
+        status: 'success',
+        duration: 2000,
+        isClosable: true,
+      });
     } catch (err) {
       console.error(err);
     }
