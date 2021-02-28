@@ -5,7 +5,7 @@ import useSWR from 'swr';
 import Snippet from '../components/Snippet';
 // import Link from 'next/link';
 import Header from '../components/Header';
-import Loader from '../components/Loader';
+// import Loader from '../components/Loader';
 
 export default function MySnippets() {
   const { data: snippets, mutate } = useSWR('/api/mySnippets');
@@ -26,7 +26,7 @@ export default function MySnippets() {
             <Snippet key={snippet.id} snippet={snippet} />
           ))
         ) : (
-          <div>Loading Snippets...</div>
+          <p className='text-gray-700'>Loading Snippets...</p>
         )}
         {/* {snippets &&
           snippets.length > 0 &&

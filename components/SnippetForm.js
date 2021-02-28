@@ -94,7 +94,7 @@ export default function SnippetForm({ snippet }) {
       {/* NAME FIELD */}
       <div className='mb-4'>
         <label
-          className='block text-red-100 text-sm font-bold mb-1'
+          className='block text-gray-600 text-sm font-semibold mb-1'
           htmlFor='name'
         >
           Name
@@ -103,11 +103,11 @@ export default function SnippetForm({ snippet }) {
           type='text'
           id='name'
           name='name'
-          className='w-full border bg-white rounded px-3 py-2 outline-none text-gray-700'
+          className='focus:border-gray-600 w-full border bg-white rounded px-3 py-2 outline-none text-gray-700'
           ref={register({ required: true })}
         />
         {errors.name && (
-          <p className='mt-1 font-semibold text-red-900'>
+          <p className='mt-1 text-sm font-semibold text-gray-800'>
             Name field is required!
           </p>
         )}
@@ -116,7 +116,7 @@ export default function SnippetForm({ snippet }) {
       {/* LANGUAGE FIELD */}
       <div className='mb-4'>
         <label
-          className='block text-red-100 text-sm font-bold mb-1'
+          className='block text-gray-600 text-sm font-semibold mb-1'
           htmlFor='language'
         >
           Language
@@ -124,10 +124,11 @@ export default function SnippetForm({ snippet }) {
         <select
           id='language'
           name='language'
-          className='w-full border bg-white rounded px-3 py-2 outline-none text-gray-700'
+          className='focus:border-gray-600 w-full border bg-white rounded px-3 py-2 outline-none text-gray-700'
           ref={register({ required: true })}
+          defaultValue='Javascript'
         >
-          <option className='py-1' selected>
+          <option className='py-1' value='Javascript'>
             Javascript
           </option>
           <option className='py-1'>HTML</option>
@@ -135,7 +136,7 @@ export default function SnippetForm({ snippet }) {
           <option className='py-1'>React</option>
         </select>
         {errors.language && (
-          <p className='mt-1 font-semibold text-red-900'>
+          <p className='mt-1 text-sm font-semibold text-gray-800'>
             Language field is required!
           </p>
         )}
@@ -144,7 +145,7 @@ export default function SnippetForm({ snippet }) {
       {/* DESCRIPTION FIELD */}
       <div className='mb-4'>
         <label
-          className='block text-red-100 text-sm font-bold mb-1'
+          className='block text-gray-600 text-sm font-semibold mb-1'
           htmlFor='description'
         >
           Description
@@ -153,12 +154,12 @@ export default function SnippetForm({ snippet }) {
           name='description'
           id='description'
           rows='3'
-          className='resize-none w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none'
+          className='focus:border-gray-600 resize-none w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none'
           placeholder='What does the snippet do?'
           ref={register({ required: true })}
         ></textarea>
         {errors.description && (
-          <p className='mt-1 font-semibold text-red-900'>
+          <p className='mt-1 text-sm font-semibold text-gray-800'>
             Description field is required!
           </p>
         )}
@@ -167,7 +168,7 @@ export default function SnippetForm({ snippet }) {
       {/* CODE FIELD */}
       <div className='mb-4'>
         <label
-          className='block text-red-100 text-sm font-bold mb-1'
+          className='block text-gray-600 text-sm font-semibold mb-1'
           htmlFor='code'
         >
           Code Snippet
@@ -176,33 +177,33 @@ export default function SnippetForm({ snippet }) {
           name='code'
           id='code'
           rows='10'
-          className='resize-none w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none'
+          className='focus:border-gray-600 resize-none w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none'
           placeholder="ex. console.log('helloworld')"
           ref={register({ required: true })}
         ></textarea>
         {errors.code && (
-          <p className='mt-1 font-semibold text-red-900'>
+          <p className='mt-1 text-sm font-semibold text-gray-800'>
             Code field is required!
           </p>
         )}
       </div>
 
       <button
-        className='transition duration-500 bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2'
+        className='transition duration-500 border-2 border-gray-700 bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2'
         type='submit'
       >
         Save
       </button>
 
       <Link href='/'>
-        <a className='transition duration-500 mt-3 inline-block bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2'>
+        <a className='transition duration-500 mt-3 inline-block border-2 border-gray-700 bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2'>
           Cancel
         </a>
       </Link>
 
       {snippet && (
         <button
-          className='transition duration-500 bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2'
+          className='transition duration-500 border-2 border-gray-700 bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2'
           type='button'
           onClick={deleteSnippet}
         >

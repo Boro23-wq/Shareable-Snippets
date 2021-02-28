@@ -7,7 +7,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider>
       <UserProvider>
-        <div className='bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 w-full p-10 min-h-screen'>
+        <div className='w-full h-2 bg-gradient-to-r from-blue-400 to-indigo-700' />
+        <div className='bg-blue-100 w-full p-10 min-h-screen'>
           <Navbar />
           <div className='max-w-2xl mx-auto'>
             <Component {...pageProps} />

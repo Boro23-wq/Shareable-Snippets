@@ -2,34 +2,34 @@ import React from 'react';
 import Code from './Code';
 import Link from 'next/link';
 import { useUser } from '@auth0/nextjs-auth0';
-import { useToast } from '@chakra-ui/react';
-import { mutate } from 'swr';
+// import { useToast } from '@chakra-ui/react';
+// import { mutate } from 'swr';
 
 export default function Snippet({ snippet }) {
-  const toast = useToast();
+  // const toast = useToast();
   const { user } = useUser();
 
-  const deleteSnippet = async () => {
-    try {
-      await fetch('/api/deleteSnippet', {
-        method: 'DELETE',
-        body: JSON.stringify({ id: snippet.id }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      mutate('/api/snippets', async (data) => {}, true);
-      toast({
-        title: 'Deleted!',
-        description: "We've deleted your snippet.",
-        status: 'error',
-        duration: 2000,
-        isClosable: true,
-      });
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  // const deleteSnippet = async () => {
+  //   try {
+  //     await fetch('/api/deleteSnippet', {
+  //       method: 'DELETE',
+  //       body: JSON.stringify({ id: snippet.id }),
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //     });
+  //     mutate('/api/snippets', async (data) => {}, true);
+  //     toast({
+  //       title: 'Deleted!',
+  //       description: "We've deleted your snippet.",
+  //       status: 'error',
+  //       duration: 2000,
+  //       isClosable: true,
+  //     });
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
   return snippet ? (
     <div className='bg-gray-100 p-4 rounded-md my-2 shadow-lg'>
@@ -44,11 +44,11 @@ export default function Snippet({ snippet }) {
       {user && user.sub === snippet.data.userId && (
         <>
           <Link href={`/edit/${snippet.id}`}>
-            <a className='text-xs mr-2 mt-2 px-2 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition duration-200 ease-in-out'>
+            <a className='text-xs mr-2 mt-2 px-2 py-1 border-2 border-gray-500 text-gray-800 rounded-md hover:border-gray-700 transition duration-200 ease-in-out'>
               Edit Snippet
             </a>
           </Link>
-          {snippet && (
+          {/* {snippet && (
             <button
               className='text-xs mr-2 mt-2 px-2 py-1 border-2 border-red-500 text-gray-800 rounded-md hover:border-red-800 transition duration-200 ease-in-out'
               type='button'
@@ -56,7 +56,7 @@ export default function Snippet({ snippet }) {
             >
               Delete Snippet
             </button>
-          )}
+          )} */}
         </>
       )}
     </div>

@@ -14,7 +14,7 @@ export default function Home() {
 
       <main className=''>
         <Header
-          title='Code Snippets'
+          title='Shareable Snippets'
           subtitle='Shareable Snippets allow developers to share code snippets easily. Get instant access to thousands of development snippets used daily.'
         />
         {snippets ? (
@@ -23,7 +23,7 @@ export default function Home() {
             <Snippet key={snippet.id} snippet={snippet} />
           ))
         ) : (
-          <div>Loading Snippets...</div>
+          <p className='text-gray-700'>Loading Snippets...</p>
         )}
       </main>
     </div>
