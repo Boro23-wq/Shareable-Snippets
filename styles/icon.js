@@ -32,7 +32,7 @@ export const ShareableSnippetsIcon = createIcon({
         rx='10'
         transform='rotate(-38.9762 0 102.123)'
         fill='#1A202C'
-        fill-opacity='0.2'
+        fillOpacity='0.2'
       />
       <rect
         x='15'

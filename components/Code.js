@@ -13,7 +13,7 @@ export default function Code({ code }) {
   return (
     <div>
       <button
-        className='transition duration-500 border-2 border-gray-600 bg-gray-700 text-xs hover:bg-gray-800 text-white font-semibold py-1 px-2 rounded focus:outline-none focus:shadow-outline mb-2'
+        className='transition duration-500 border-2 border-gray-700 bg-gray-800 text-xs hover:bg-gray-900 text-white font-semibold py-1 px-2 rounded focus:outline-none focus:shadow-outline mb-2'
         type='submit'
         onClick={() => setShowCode(!showCode)}
       >

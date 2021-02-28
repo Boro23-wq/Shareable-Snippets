@@ -38,7 +38,7 @@ export default function Navbar() {
         </Link> */}
         {!isLoading && !user && (
           <Link href='/api/auth/login'>
-            <a className='text-md text-gray-100 border-2 border-gray-800 bg-gray-900 font-bold px-4 py-1 rounded-md hover:bg-gray-800 transition duration-500 ease-in-out'>
+            <a className='text-md text-gray-100 border-2 border-gray-700 bg-gray-900 font-bold px-4 py-2 rounded-md hover:bg-gray-800 transition duration-500 ease-in-out'>
               Login
             </a>
           </Link>
