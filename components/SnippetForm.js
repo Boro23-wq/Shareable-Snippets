@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { mutate } from 'swr';
 // import { useUser } from '@auth0/nextjs-auth0';
 import { useToast } from '@chakra-ui/react';
 
@@ -28,7 +29,6 @@ export default function SnippetForm({ snippet }) {
           'Content-Type': 'application/json',
         },
       });
-      router.push('/');
       toast({
         title: 'Success!',
         description: "We've created your snippet.",
@@ -36,6 +36,7 @@ export default function SnippetForm({ snippet }) {
         duration: 2000,
         isClosable: true,
       });
+      router.push('/');
     } catch (err) {
       console.error(err);
     }
