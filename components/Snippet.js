@@ -2,6 +2,8 @@ import React from 'react';
 import Code from './Code';
 import Link from 'next/link';
 import { useUser } from '@auth0/nextjs-auth0';
+import { Spinner } from '@chakra-ui/react';
+
 // import { useToast } from '@chakra-ui/react';
 // import { mutate } from 'swr';
 
@@ -61,6 +63,15 @@ export default function Snippet({ snippet }) {
       )}
     </div>
   ) : (
-    <p className='text-red-800'>Loading Snippets...</p>
+    // <p className='text-red-800'>Loading Snippets...</p>
+    <div className='flex justify-center'>
+      <Spinner
+        thickness='4px'
+        speed='0.65s'
+        emptyColor='gray.200'
+        color='gray.800'
+        size='lg'
+      />
+    </div>
   );
 }

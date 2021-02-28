@@ -1,24 +1,32 @@
-import Head from 'next/head';
-import React from 'react';
+import { Avatar, AvatarBadge, AvatarGroup } from '@chakra-ui/react';
+import { Spinner } from '@chakra-ui/react';
 import { withPageAuthRequired, useUser } from '@auth0/nextjs-auth0';
-import useSWR from 'swr';
-import Snippet from '../components/Snippet';
-// import Link from 'next/link';
+import Head from 'next/head';
 import Header from '../components/Header';
-// import Loader from '../components/Loader';
+import React from 'react';
+import Snippet from '../components/Snippet';
+import useSWR from 'swr';
 
 export default function MySnippets() {
   const { data: snippets, mutate } = useSWR('/api/mySnippets');
-  // const { user } = useUser();
+  const { user } = useUser();
+
+  console.log(user);
 
   return (
     <div>
       <Head>
-        <title>My Code Snippets</title>
+        <title>My Snippets</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className='my-12'>
-        <Header title='My Code Snippets' />
+        <div className='flex justify-center items-center flex-col'>
+          <Avatar size='2xl' name='Avatar' src={user?.picture} />
+          <p className='text-gray-700 mt-2 font-semibold'>{user?.name}</p>
+          <p className='text-gray-600 text-sm'>@{user?.nickname}</p>
+        </div>
+
+        <Header title='My Snippets' />
 
         {snippets ? (
           snippets.length > 0 &&
@@ -26,7 +34,16 @@ export default function MySnippets() {
             <Snippet key={snippet.id} snippet={snippet} />
           ))
         ) : (
-          <p className='text-gray-700'>Loading Snippets...</p>
+          // <p className='text-gray-700'>Loading Snippets...</p>
+          <div className='flex justify-center'>
+            <Spinner
+              thickness='4px'
+              speed='0.65s'
+              emptyColor='gray.200'
+              color='gray.800'
+              size='lg'
+            />
+          </div>
         )}
         {/* {snippets &&
           snippets.length > 0 &&
@@ -35,7 +52,7 @@ export default function MySnippets() {
           ))} */}
         {!snippets ||
           (snippets.length === 0 && (
-            <p className='text-red-200'>
+            <p className='text-gray-600'>
               There are no snippets yet. Please create a snippet first!
             </p>
           ))}

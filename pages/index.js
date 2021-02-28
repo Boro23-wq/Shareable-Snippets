@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Snippet from '../components/Snippet';
 import useSWR from 'swr';
 import Header from '../components/Header';
+import { Spinner } from '@chakra-ui/react';
 
 export default function Home() {
   const { data: snippets, mutate } = useSWR('/api/snippets');
@@ -23,7 +24,16 @@ export default function Home() {
             <Snippet key={snippet.id} snippet={snippet} />
           ))
         ) : (
-          <p className='text-gray-600'>Loading Snippets...</p>
+          // <p className='text-gray-600'>Loading Snippets...</p>
+          <div className='flex justify-center'>
+            <Spinner
+              thickness='4px'
+              speed='0.65s'
+              emptyColor='gray.200'
+              color='gray.800'
+              size='lg'
+            />
+          </div>
         )}
         {snippets && snippets.length === 0 && (
           <p className='text-gray-600'>

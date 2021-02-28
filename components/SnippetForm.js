@@ -131,9 +131,7 @@ export default function SnippetForm({ snippet }) {
           <option className='py-1' value='Javascript'>
             Javascript
           </option>
-          <option className='py-1' value='Javascript'>
-            Bash
-          </option>
+          <option className='py-1'>Bash</option>
           <option className='py-1'>HTML</option>
           <option className='py-1'>CSS</option>
           <option className='py-1'>React</option>
