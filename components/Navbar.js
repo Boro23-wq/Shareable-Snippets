@@ -42,7 +42,7 @@ export default function Navbar() {
             </Link>
             <Link href='/api/auth/logout'>
               <a className='text-sm text-gray-800 bg-gray-100 font-bold px-2 border-2 rounded-md hover:bg-gray-300 transition duration-500 ease-in-out'>
-                Logout - {user?.family_name}
+                Logout - {user?.name}
               </a>
             </Link>
             {/* <div>
