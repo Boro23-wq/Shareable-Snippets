@@ -5,6 +5,7 @@ import Header from '../components/Header';
 
 export default function Home() {
   const { data: snippets, mutate } = useSWR('/api/snippets');
+  console.log(snippets);
   return (
     <div>
       <Head>
@@ -23,7 +24,12 @@ export default function Home() {
             <Snippet key={snippet.id} snippet={snippet} />
           ))
         ) : (
-          <p className='text-gray-700'>Loading Snippets...</p>
+          <p className='text-gray-600'>Loading Snippets...</p>
+        )}
+        {snippets && snippets.length === 0 && (
+          <p className='text-gray-600'>
+            No snippets available. Please register the very first snippet!
+          </p>
         )}
       </main>
     </div>

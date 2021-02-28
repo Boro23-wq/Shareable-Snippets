@@ -61,6 +61,6 @@ export default function Snippet({ snippet }) {
       )}
     </div>
   ) : (
-    <div>Loading Snippet...</div>
+    <p className='text-red-800'>Loading Snippets...</p>
   );
 }
