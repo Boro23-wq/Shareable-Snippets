@@ -2,7 +2,12 @@ import { useUser } from '@auth0/nextjs-auth0';
 import React from 'react';
 import Link from 'next/link';
 
-import { FastFeedbackIcon, ShareableSnippetsIcon } from '../styles/icon';
+import {
+  LoginIcon,
+  LogoutIcon,
+  ShareableSnippetsIcon,
+  SnippetsIcon,
+} from '../styles/icon';
 
 export default function Navbar() {
   const { user, isLoading } = useUser();
@@ -39,31 +44,29 @@ export default function Navbar() {
         {!isLoading && !user && (
           <Link href='/api/auth/login'>
             <a className='text-md text-gray-100 border-2 border-gray-700 bg-gray-900 font-bold px-4 py-2 rounded-md hover:bg-gray-800 transition duration-500 ease-in-out'>
-              Login
+              Login <LoginIcon className='ml-2' />
             </a>
           </Link>
         )}
         {!isLoading && user && (
-          <>
-            <Link href='/mySnippets'>
-              <a className='text-md text-gray-100 border-2 border-gray-700 bg-gray-900 font-bold px-4 py-2 rounded-md hover:bg-gray-800 transition duration-500 ease-in-out'>
-                My Snippets
-              </a>
-            </Link>
-            <Link href='/api/auth/logout'>
-              <a className='text-md text-gray-100 border-2 border-gray-700 bg-gray-900 font-bold px-4 py-2 rounded-md hover:bg-gray-800 transition duration-500 ease-in-out'>
-                Logout -{' '}
-                <span className='text-gray-200 underline'>{user?.name}</span>
-              </a>
-            </Link>
-            {/* <div>
-              <img
-                className='inline-block h-6 w-6 rounded-full ring-2 ring-white'
-                src={user.picture}
-                alt='profile picture'
-              />
-            </div> */}
-          </>
+          <div className='sm:flex'>
+            <div className='sm:flex-row '>
+              <Link href='/mySnippets'>
+                <a className='block text-center text-md text-gray-100 border-2 border-gray-700 bg-gray-900 font-bold px-4 py-2 rounded-md hover:bg-gray-800 transition duration-500 ease-in-out'>
+                  My Snippets <SnippetsIcon className='ml-2' />
+                </a>
+              </Link>
+            </div>
+            <div className='mt-2 sm:flex-row sm:ml-2 sm:mt-0'>
+              <Link href='/api/auth/logout'>
+                <a className='block text-center text-md text-gray-100 border-2 border-gray-700 bg-gray-900 font-bold px-4 py-2 rounded-md hover:bg-gray-800 transition duration-500 ease-in-out'>
+                  Logout -{' '}
+                  <span className='text-gray-200 underline'>{user?.name}</span>
+                  <LogoutIcon className='ml-2 mb-1' />
+                </a>
+              </Link>
+            </div>
+          </div>
         )}
       </div>
     </nav>

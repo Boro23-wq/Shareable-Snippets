@@ -46,3 +46,73 @@ export const ShareableSnippetsIcon = createIcon({
     </g>
   ),
 });
+
+export const CreateIcon = createIcon({
+  displayName: 'CreateIcon',
+  viewBox: '0 0 24 24',
+  path: (
+    <path
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      strokeWidth={3}
+      d='M12 6v6m0 0v6m0-6h6m-6 0H6'
+      stroke='#fff'
+    />
+  ),
+});
+
+export const LoginIcon = createIcon({
+  displayName: 'LoginIcon',
+  viewBox: '0 0 24 24',
+  path: (
+    <path
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      strokeWidth={2}
+      d='M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1'
+      stroke='currentColor'
+    />
+  ),
+});
+
+export const LogoutIcon = createIcon({
+  displayName: 'LogoutIcon',
+  viewBox: '0 0 24 24',
+  path: (
+    <path
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      strokeWidth={2}
+      d='M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1'
+      stroke='currentColor'
+    />
+  ),
+});
+
+export const SnippetsIcon = createIcon({
+  displayName: 'SnippetsIcon',
+  viewBox: '0 0 24 24',
+  path: (
+    <path
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      strokeWidth={2}
+      d='M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2'
+      stroke='currentColor'
+    />
+  ),
+});
+
+export const CopyIcon = createIcon({
+  displayName: 'CopyIcon',
+  viewBox: '0 0 24 24',
+  path: (
+    <path
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      strokeWidth={2}
+      d='M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z'
+      stroke='currentColor'
+    />
+  ),
+});

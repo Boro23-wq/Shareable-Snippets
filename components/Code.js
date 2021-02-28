@@ -1,3 +1,4 @@
+import { CopyIcon } from '@chakra-ui/icons';
 import React, { useState } from 'react';
 
 export default function Code({ code }) {
@@ -30,7 +31,7 @@ export default function Code({ code }) {
             type='submit'
             onClick={copyCode}
           >
-            {copyText}
+            {copyText} <CopyIcon />
           </button>
         </div>
       )}
