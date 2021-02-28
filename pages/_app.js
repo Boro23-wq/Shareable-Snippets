@@ -1,7 +1,8 @@
-import Navbar from '../components/Navbar';
 import '../styles/global.css';
-import { UserProvider } from '@auth0/nextjs-auth0';
 import { ChakraProvider } from '@chakra-ui/react';
+import { UserProvider } from '@auth0/nextjs-auth0';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps }) {
           <div className='max-w-2xl mx-auto'>
             <Component {...pageProps} />
           </div>
+          <Footer />
         </div>
       </UserProvider>
     </ChakraProvider>

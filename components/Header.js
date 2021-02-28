@@ -23,14 +23,14 @@ export default function Header({ title, subtitle = '' }) {
       </p>
       {!isLoading && user && (
         <Link href='/new'>
-          <a className='transition duration-500 ease-in-out mt-3 inline-block border-2 border-gray-700 bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'>
+          <a className='transition duration-500 ease-in-out mt-3 block text-center sm:inline-block border-2 border-gray-700 bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'>
             Create a snippet <CreateIcon className='ml-2' />
           </a>
         </Link>
       )}
       {!isLoading && !user && (
         <Link href='/api/auth/login'>
-          <a className='transition duration-500 ease-in-out mt-3 inline-block border-2 border-gray-700 bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'>
+          <a className='border-2 border-gray-700 bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-500 ease-in-out mt-3 block sm:inline-block text-sm text-center sm:text-base'>
             Login to create snippets <LoginIcon className='ml-2' />
           </a>
         </Link>
