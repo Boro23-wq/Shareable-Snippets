@@ -29,7 +29,7 @@ export const DropdownMenu = () => {
         <ul className='list-none p-0 m-0'>
           {languages.map((language) => (
             <li key={language.name} className='border-b-2 border-gray-100'>
-              <Link href={`/snippets/${language.url}`}>
+              <Link href={`/snippets/${language.url}`} preload>
                 <a
                   onClick={onClick}
                   className='no-underline text-gray-700 py-3 px-5 block hover:bg-gray-100 transition duration-200 ease-in-out'
