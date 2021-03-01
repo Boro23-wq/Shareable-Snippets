@@ -13,6 +13,7 @@
     U+FEFF, U+FFFD;
 }
 
+html,
 body {
   margin: 0;
   padding: 0;
