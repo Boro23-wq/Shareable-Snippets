@@ -5,7 +5,10 @@ import Header from '../../components/Header';
 import { Spinner } from '@chakra-ui/react';
 
 export default function SnippetsByLanguage({ language, snippets }) {
-  const mainLanguage = language[0].toUpperCase() + language.substring(1);
+  const mainLanguage =
+    language === 'html' || language === 'css'
+      ? language.toUpperCase()
+      : language[0].toUpperCase() + language.substring(1);
 
   return (
     <>

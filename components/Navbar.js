@@ -53,7 +53,7 @@ export default function Navbar() {
             <div className='sm:flex-row '>
               <Link href='/mySnippets'>
                 <a className='block text-center text-md text-gray-100 border-2 border-gray-700 bg-gray-900 font-bold px-4 py-2 rounded-md hover:bg-gray-800 transition duration-500 ease-in-out'>
-                  My Snippets <SnippetsIcon className='ml-2' />
+                  My Snippets <SnippetsIcon className='ml-2 mb-1' />
                 </a>
               </Link>
             </div>
