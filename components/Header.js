@@ -6,7 +6,7 @@ import { CreateIcon, LoginIcon } from '../styles/icon';
 import { DropdownMenu } from './Dropdown';
 
 export default function Header({ title, subtitle = '' }) {
-  const { user, isLoading } = useUser();
+  const { user } = useUser();
 
   return (
     <header className='my-10'>
@@ -25,7 +25,7 @@ export default function Header({ title, subtitle = '' }) {
       </p>
 
       <div className='flex flex-col sm:flex sm:flex-row'>
-        {!isLoading && user && (
+        {user && (
           <Link href='/new'>
             <a className='border-2 border-gray-700 bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 sm:mr-2 rounded focus:outline-none focus:shadow-outline transition duration-500 ease-in-out mt-3 block sm:inline-block text-sm text-center sm:text-base'>
               Create a snippet <CreateIcon className='ml-2' />
@@ -33,7 +33,7 @@ export default function Header({ title, subtitle = '' }) {
           </Link>
         )}
 
-        {!isLoading && !user && (
+        {!user && (
           <Link href='/api/auth/login'>
             <a className='border-2 border-gray-700 bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 sm:mr-2 rounded focus:outline-none focus:shadow-outline transition duration-500 ease-in-out mt-3 block sm:inline-block text-sm text-center sm:text-base'>
               Login to create snippets <LoginIcon className='ml-2' />
