@@ -6,7 +6,7 @@ export default function Code({ code }) {
   const [copyText, setCopyText] = useState('Copy');
   const copyCode = async () => {
     await navigator.clipboard.writeText(code);
-    setCopyText('Copied!');
+    setCopyText('Copied');
     setTimeout(() => {
       setCopyText('Copy');
     }, 1000);
