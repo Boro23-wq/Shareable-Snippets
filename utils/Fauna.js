@@ -45,9 +45,11 @@ const getSnippetsByUser = async (userId) => {
 };
 
 const getSnippetsByLanguage = async (language) => {
+  const mainLanguage = language[0].toUpperCase() + language.substring(1);
+
   const { data } = await faunaClient.query(
     q.Map(
-      q.Paginate(q.Match(q.Index('snippets_by_language'), language)),
+      q.Paginate(q.Match(q.Index('snippets_by_language'), mainLanguage)),
       q.Lambda('ref', q.Get(q.Var('ref')))
     )
   );

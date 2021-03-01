@@ -30,8 +30,8 @@ export default function Navbar() {
           <a className='text-red-100 font-bold px-2 border-2 border-red-400 rounded-md hover:border-red-200 transition duration-500 ease-in-out'>
             HTML
           </a>
-        </Link>
-        <Link href='/snippets/css'>
+        </Link> */}
+        {/*<Link href='/snippets/css'>
           <a className='text-red-100 font-bold px-2 border-2 border-red-400 rounded-md hover:border-red-200 transition duration-500 ease-in-out'>
             CSS
           </a>
