@@ -15,9 +15,7 @@ export const DropdownMenu = () => {
       >
         <span className='text-gray-700 text-sm text-center'>
           Filter Snippets{' '}
-          <span className='text-gray-600 font-extralight'>
-            {language ? '(' + language + ')' : '(By Language)'}
-          </span>
+          <span className='text-gray-600 font-extralight'>(By Language)</span>
         </span>
       </button>
 
@@ -31,7 +29,7 @@ export const DropdownMenu = () => {
           <li className='border-b-2 border-gray-200'>
             <Link href='/snippets/javascript'>
               <a
-                onClick={() => setLanguage('Javascript')}
+                onClick={onClick}
                 className='no-underline text-gray-700 py-3 px-5 block hover:bg-gray-100 transition duration-200 ease-in-out'
               >
                 Javascript
@@ -41,7 +39,7 @@ export const DropdownMenu = () => {
           <li className='border-b-2 border-gray-200'>
             <Link href='/snippets/react'>
               <a
-                onClick={() => setLanguage('React')}
+                onClick={onClick}
                 className='no-underline text-gray-700 py-3 px-5 block hover:bg-gray-100 transition duration-200 ease-in-out'
               >
                 React
@@ -51,7 +49,7 @@ export const DropdownMenu = () => {
           <li className='border-b-2 border-gray-200'>
             <Link href='/snippets/html'>
               <a
-                onClick={() => setLanguage('HTML')}
+                onClick={onClick}
                 className='no-underline text-gray-700 py-3 px-5 block hover:bg-gray-100 transition duration-200 ease-in-out'
               >
                 HTML
@@ -61,7 +59,7 @@ export const DropdownMenu = () => {
           <li className='border-b-2 border-gray-200'>
             <Link href='/snippets/css'>
               <a
-                onClick={() => setLanguage('CSS')}
+                onClick={onClick}
                 className='no-underline text-gray-700 py-3 px-5 block hover:bg-gray-100 transition duration-200 ease-in-out'
               >
                 CSS
@@ -71,7 +69,7 @@ export const DropdownMenu = () => {
           <li>
             <Link href='/snippets/bash'>
               <a
-                onClick={() => setLanguage('Bash')}
+                onClick={onClick}
                 className='no-underline text-gray-700 py-3 px-5 block hover:bg-gray-100 transition duration-200 ease-in-out'
               >
                 Bash

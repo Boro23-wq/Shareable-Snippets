@@ -20,8 +20,8 @@ export default function Header({ title, subtitle = '' }) {
         <span className='bg-gradient-to-r from-blue-300 to-indigo-500 text-white px-1 sm:px-1 sm:py-1 rounded-sm'>
           share code
         </span>{' '}
-        snippets easily. Get instant access to thousands of development snippets
-        used daily.
+        snippets easily. Get instant access to thousands of essential snippets
+        used daily at development.
       </p>
 
       <div className='flex flex-col sm:flex sm:flex-row'>

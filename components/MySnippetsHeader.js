@@ -17,8 +17,7 @@ export default function Header({ title, subtitle = '' }) {
       <p className='text-gray-800 font-md'>
         Hi 👋 <span className='font-semibold underline'>{user?.name}</span>.
         Below you will find the list of snippets associated with this account.
-        Please do consider creating a new snippet if you haven't already. Help
-        sharing snippets with the developer community.
+        Please do consider creating a new snippet if you haven't already.
       </p>
 
       <div className='flex flex-col sm:flex sm:flex-row'>
