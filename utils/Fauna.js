@@ -46,7 +46,7 @@ const getSnippetsByUser = async (userId) => {
 
 const getSnippetsByLanguage = async (language) => {
   const mainLanguage =
-    language === 'html' || 'css'
+    language === 'html' || language === 'css'
       ? language.toUpperCase()
       : language[0].toUpperCase() + language.substring(1);
 
