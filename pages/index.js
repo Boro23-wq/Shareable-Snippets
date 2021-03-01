@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Shareable Snippets</title>
+        <title>Shareable Snippets - Sharing code made easy</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 

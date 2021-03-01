@@ -1,10 +1,11 @@
 import { useState, useRef } from 'react';
 import Link from 'next/link';
 
+import { languages } from '../utils/languages';
+
 export const DropdownMenu = () => {
   const dropdownRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
-  const [language, setLanguage] = useState('');
   const onClick = () => setIsActive(!isActive);
 
   return (
@@ -26,56 +27,18 @@ export const DropdownMenu = () => {
         }`}
       >
         <ul className='list-none p-0 m-0'>
-          <li className='border-b-2 border-gray-200'>
-            <Link href='/snippets/javascript'>
-              <a
-                onClick={onClick}
-                className='no-underline text-gray-700 py-3 px-5 block hover:bg-gray-100 transition duration-200 ease-in-out'
-              >
-                Javascript
-              </a>
-            </Link>
-          </li>
-          <li className='border-b-2 border-gray-200'>
-            <Link href='/snippets/react'>
-              <a
-                onClick={onClick}
-                className='no-underline text-gray-700 py-3 px-5 block hover:bg-gray-100 transition duration-200 ease-in-out'
-              >
-                React
-              </a>
-            </Link>
-          </li>
-          <li className='border-b-2 border-gray-200'>
-            <Link href='/snippets/html'>
-              <a
-                onClick={onClick}
-                className='no-underline text-gray-700 py-3 px-5 block hover:bg-gray-100 transition duration-200 ease-in-out'
-              >
-                HTML
-              </a>
-            </Link>
-          </li>
-          <li className='border-b-2 border-gray-200'>
-            <Link href='/snippets/css'>
-              <a
-                onClick={onClick}
-                className='no-underline text-gray-700 py-3 px-5 block hover:bg-gray-100 transition duration-200 ease-in-out'
-              >
-                CSS
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/snippets/bash'>
-              <a
-                onClick={onClick}
-                className='no-underline text-gray-700 py-3 px-5 block hover:bg-gray-100 transition duration-200 ease-in-out'
-              >
-                Bash
-              </a>
-            </Link>
-          </li>
+          {languages.map((language) => (
+            <li key={language.name} className='border-b-2 border-gray-100'>
+              <Link href={`/snippets/${language.url}`}>
+                <a
+                  onClick={onClick}
+                  className='no-underline text-gray-700 py-3 px-5 block hover:bg-gray-100 transition duration-200 ease-in-out'
+                >
+                  {language.name}
+                </a>
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>

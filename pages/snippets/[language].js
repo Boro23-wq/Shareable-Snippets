@@ -13,7 +13,7 @@ export default function SnippetsByLanguage({ language, snippets }) {
   return (
     <>
       <Head>
-        <title>Code Snippets for "{mainLanguage}" </title>
+        <title>{mainLanguage} Snippets </title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
