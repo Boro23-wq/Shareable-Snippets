@@ -2,27 +2,42 @@ import Head from 'next/head';
 import { getSnippetsByLanguage } from '../../utils/Fauna';
 import Snippet from '../../components/Snippet';
 import Header from '../../components/Header';
+import { Spinner } from '@chakra-ui/react';
 
 export default function SnippetsByLanguage({ language, snippets }) {
+  const mainLanguage = language[0].toUpperCase() + language.substring(1);
+
   return (
     <>
       <Head>
-        <title>Code Snippets for "{language}" </title>
+        <title>Code Snippets for "{mainLanguage}" </title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <main className='my-12'>
-        <Header title={`${language.toUpperCase()} Snippets`} />
+        <Header title={`${mainLanguage} Snippets`} />
 
-        {snippets &&
+        {snippets ? (
           snippets.length > 0 &&
           snippets.map((snippet) => (
             <Snippet key={snippet.id} snippet={snippet} />
-          ))}
+          ))
+        ) : (
+          <div className='flex justify-center'>
+            <Spinner
+              thickness='4px'
+              speed='0.65s'
+              emptyColor='gray.200'
+              color='gray.800'
+              size='lg'
+            />
+          </div>
+        )}
         {!snippets ||
           (snippets.length === 0 && (
-            <p className='text-red-200'>
-              There are no {language} snippets yet 🙁
+            <p className='text-gray-600'>
+              We do not have any {mainLanguage} snippets. Please contribute to
+              the first one!
             </p>
           ))}
       </main>

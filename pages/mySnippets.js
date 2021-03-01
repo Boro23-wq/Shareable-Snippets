@@ -11,8 +11,6 @@ export default function MySnippets() {
   const { data: snippets, mutate } = useSWR('/api/mySnippets');
   const { user } = useUser();
 
-  console.log(user);
-
   return (
     <div>
       <Head>
