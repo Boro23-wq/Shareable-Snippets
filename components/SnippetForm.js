@@ -179,7 +179,7 @@ export default function SnippetForm({ snippet }) {
           id='code'
           rows='10'
           className='focus:border-gray-600 resize-none w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none'
-          placeholder="ex. console.log('helloworld')"
+          placeholder="For ex. console.log('Paste your code snippet here.')"
           ref={register({ required: true })}
         ></textarea>
         {errors.code && (
