@@ -45,7 +45,10 @@ const getSnippetsByUser = async (userId) => {
 };
 
 const getSnippetsByLanguage = async (language) => {
-  const mainLanguage = language[0].toUpperCase() + language.substring(1);
+  const mainLanguage =
+    language === 'html' || 'css'
+      ? language.toUpperCase()
+      : language[0].toUpperCase() + language.substring(1);
 
   const { data } = await faunaClient.query(
     q.Map(
