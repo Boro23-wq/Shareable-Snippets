@@ -30,3 +30,16 @@ body {
   visibility: visible;
   transform: translateY(0);
 }
+
+#nprogress .bar {
+  background: rgb(226, 76, 85) !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px rgb(226, 76, 85), 0 0 5px rgb(226, 76, 85) !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: rgb(226, 76, 85) !important;
+  border-left-color: rgb(226, 76, 85) !important;
+}
