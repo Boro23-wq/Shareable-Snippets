@@ -20,14 +20,7 @@ export default function Navbar() {
         </Link>
       </div>
       <div className='space-x-3 m-x-auto mb-6 justify-center'>
-        {!user && (
-          <Link href='/api/auth/login'>
-            <a className='text-md text-gray-100 border-2 border-gray-700 bg-gray-900 font-bold px-4 py-2 rounded-md hover:bg-gray-800 transition duration-500 ease-in-out'>
-              Login <LoginIcon className='ml-2' />
-            </a>
-          </Link>
-        )}
-        {user && (
+        {user ? (
           <div className='sm:flex'>
             <div className='sm:flex-row '>
               <Link href='/mySnippets'>
@@ -46,6 +39,12 @@ export default function Navbar() {
               </Link>
             </div>
           </div>
+        ) : (
+          <Link href='/api/auth/login'>
+            <a className='text-md text-gray-100 border-2 border-gray-700 bg-gray-900 font-bold px-4 py-2 rounded-md hover:bg-gray-800 transition duration-500 ease-in-out'>
+              Login <LoginIcon className='ml-2' />
+            </a>
+          </Link>
         )}
       </div>
     </nav>
